@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
+    "lint": "eslint \"./**/*.ts\"",
     "test": "mocha -r ts-node/register 'tests/**/*.ts'"
   },
   "author": "mgfeller",
@@ -31,6 +32,9 @@
   },
   "devDependencies": {
     "@types/mocha": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
     "ts-node": "^10.0.0",
     "typescript": "4.3.5"
   }
