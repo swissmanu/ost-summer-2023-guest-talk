@@ -38,8 +38,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cypress run
+      - name: Run Cypress
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
           start: npm start
+      - name: Provide Screenrecording as Artifact
+        uses: actions/upload-artifact@v3
+        if: ${{ success() || failure() }}
+        with:
+          retention-days: 10
+          name: cypress-screenrecording
+          path: |
+            cypress/videos/*.mp4
